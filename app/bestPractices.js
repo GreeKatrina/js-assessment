@@ -1,4 +1,4 @@
-if (typeof define !== 'function') { var define = require('amdefine')(module); }
+
 
 /**
  * This file defines an object with some methods. Some of these methods are
@@ -8,29 +8,29 @@ if (typeof define !== 'function') { var define = require('amdefine')(module); }
 define(function() {
   return {
     globals : function() {
-      myObject = {
-        name : 'Jory'
-      };
 
-      return myObject;
     },
 
     functions : function(flag) {
       if (flag) {
-        function getValue() { return 'a'; }
+        var getValue = function() { return 'a'; };
       } else {
-        function getValue() { return 'b'; }
+        var getValue = function() { return 'b'; };
       }
 
       return getValue();
     },
 
     parseInt : function(num) {
-      return parseInt(num);
+      return parseFloat(num);
     },
 
     identity : function(val1, val2) {
-
+      if (val1 === val2){
+        return true;
+      }else{
+        return false;
+      };
     }
   };
 });
